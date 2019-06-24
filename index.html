@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+</style>
+
+<body>
+<div id="caja">
+	<ul class="botones">
+		<li>
+			<img id="boton0" alt="" src="img/boton0off.png">
+		</li>
+		<li>
+			<img id="boton1" alt="" src="img/boton1off.png">
+		</li>
+	</ul>
+	<ul class="botones">
+		<li>
+			<img id="boton2" alt="" src="img/boton2off.png">
+		</li>
+		<li>
+			<img id="boton3" alt="" src="img/boton3off.png">
+		</li>
+	</ul>
+	<div class="controles">
+			<input class="button" value="Empezar" id="start">
+	</div>
+</div>
+<audio id="audioBoton0" src="audio/audioBoton0.mp3"></audio>
+<audio id="audioBoton1" src="audio/audioBoton1.mp3"></audio>
+<audio id="audioBoton2" src="audio/audioBoton2.mp3"></audio>
+<audio id="audioBoton3" src="audio/audioBoton3.mp3"></audio>
+<script type="text/javascript" src="js/botones.js">
+
+
+
+
+
+</script>
+</body>
+</html>
