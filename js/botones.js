@@ -222,7 +222,6 @@ console.log("este es el comp antes del while "+CompTurn);
 console.log("este es el player antes del while "+PlayerTurn);
 
 
-setTimeout (function (){
 	while (error==0 && StarBtonOn==true){
 	console.log("entro en el while")
 		if (CompTurn){
@@ -255,7 +254,6 @@ setTimeout (function (){
 	}
 	}
 			
-},3000);
 
 
 
