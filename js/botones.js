@@ -97,13 +97,21 @@ function flashLigths (){
  * @return en caso de ser erroneo devuelve error=1;
  */
 
-function comprobacion (x){
-	if (pulsado!=GameComputer[indice]){
-		error=1;
-		console.log("error en condicional boton"+error);
-	}else {
-		indice++;
-		console.log("sin error"+indice);}
+function comprobacion (){
+	console.log("valor del indice:"+indice);
+	//console.log("valor del pulsado"+GamePlayer[GamePlayer.length]);
+	//console.log("valor de la matriz"+GameComputer[GamePlayer.length]);
+			if (pulsado != GameComputer[indice]){
+				error=1;
+				puntuacion=GameComputer.length-1;
+				console.log("error en condicional boton"+error);
+				document.getElementById('puntuacion').value=puntuacion;
+				document.getElementById('start').value="Reintentar";
+				document.getElementById('start').disabled=false;
+			}else{
+				indice++
+			}
+		
 }
 
 /** Esta funcion reproduce la secuencia guardada en el array
@@ -115,8 +123,12 @@ function comprobacion (x){
 
 function mostrar (array){
 	var z=0;
+	//document.getElementById('boton0').disabled=true;
+	//document.getElementById('boton1').disabled=true;
+	//document.getElementById('boton2').disabled=true;
+	//document.getElementById('boton3').disabled=true;
 	setInterval (function(){
-		if (i<GameComputer.length) {
+		if (i<GameComputer.length && error==0) {
 ligthsOff();
 console.log('entro en el bucle');
 			
@@ -124,41 +136,39 @@ console.log('entro en el bucle');
 			if (GameComputer[z]==1) uno ();
 			if (GameComputer[z]==2) dos ();
 			if (GameComputer[z]==3) tres ();
-			z++
-			console.log(i+' vuelta');
-			console.log('valor variable despues de la primera vuelta'+i);
+			z++;
 		} 
-		},500);
+		},750);
 	error=0;
-	game ();
-	i=0
+	var time=GameComputer.length*750
+	setTimeout (function(){
+			game ();
+	},time);
+	i=0;
 	}
 
 
 
-
-var azar;	
 var GameComputer=[];
-var indice;
+var azar;	
+var indice=0;
 var error=0;
-var pulsado;
-var IntervalId;
-var PlayerTurn;
-var CompTurn;
-var StarBtonOn=false;
 var i=0;
-
-
-
+var puntuacion=0;
 
 
 document.getElementById('start').onclick=function(){
+	 GameComputer=[];
+	  i=0;
+	  error=0;
+	  indice=0;
+	  puntuacion=0;
+	  document.getElementById('puntuacion').value=puntuacion;
 	flashLigths();
 	setTimeout(function(){
 		ligthsOff();
 		},750);
-	document.getElementById('start').class="button disabled";
-	document.getElementById('start').disable=true;
+	document.getElementById('start').disabled=true;
 	game();
 	
 }	
@@ -174,31 +184,26 @@ function game (){
 		},500);
 		var objAudio = document.getElementById('audioBoton'+azar);
 		objAudio.play();
-		},1000);
-	PlayerTurn=true;
-	
+	},750);
+		console.log("esta es la matriz del juego "+GameComputer);
+		indice=0;
+		//console.log("esta la matriz del jugador despues del game"+GamePlayer);
 }	
 
 
-
-
-
-console.log(GameComputer);
-
-
-indice=GameComputer.length;
-
 document.getElementById('boton0').onclick=function(){
 	pulsado=0;
-	i++;
+	i++
+	//GamePlayer.push(pulsado);
+	//console.log("matriz game player "+GamePlayer);
 	var objBoton = document.getElementById('boton0').src="img/boton0.png";
 	console.log('he pasado el encendido del boton0 por presion');
 	setTimeout(function(){
 			ligthsOff();
-		},200);
+		},300);
 	var objAudio = document.getElementById('audioBoton0');
 	objAudio.play();
-	comprobacion(indice);
+	comprobacion();
 	if (i==GameComputer.length){
         mostrar(GameComputer)		
 		}
@@ -211,14 +216,16 @@ document.getElementById('boton0').onclick=function(){
 document.getElementById('boton1').onclick=function(){
 	pulsado=1;
 	i++;
+	//GamePlayer.push(pulsado);
+	//console.log("matriz game player "+GamePlayer);
 	this.style.opacity='1';
 	var objBoton = document.getElementById('boton1').src="img/boton1.png";
 	setTimeout(function(){
 			ligthsOff();
-		},200);
+		},300);
 	var objAudio = document.getElementById('audioBoton1');
 	objAudio.play();
-	comprobacion(indice);
+	comprobacion();
 	if (i==GameComputer.length){
         mostrar(GameComputer)		
 		}
@@ -228,15 +235,17 @@ document.getElementById('boton1').onclick=function(){
 document.getElementById('boton2').onclick=function(){
 	pulsado=2;
 	i++;
+	//GamePlayer.push(pulsado);
+	//console.log("matriz game player "+GamePlayer);
 	this.style.opacity='1';
 	var objBoton = document.getElementById('boton2').src="img/boton2.png";
 	setTimeout(function(){
 			ligthsOff();
 			StarBtonOn=false;
-		},200);
+		},300);
 	var objAudio = document.getElementById('audioBoton2');
 	objAudio.play();
-	comprobacion(indice);
+	comprobacion();
 	if (i==GameComputer.length){
         mostrar(GameComputer)		
 		}
@@ -245,13 +254,15 @@ document.getElementById('boton2').onclick=function(){
 document.getElementById('boton3').onclick=function(){
 	pulsado=3;
 	i++;
+	//GamePlayer.push(pulsado);
+	//console.log("matriz game player "+GamePlayer);
 	var objBoton = document.getElementById('boton3').src="img/boton3.png";
 	setTimeout(function(){
 			ligthsOff();
-		},200);
+		},300);
 	var objAudio = document.getElementById('audioBoton3');
 	objAudio.play();
-	comprobacion(indice);
+	comprobacion();
 	if (i==GameComputer.length){
         mostrar(GameComputer)		
 		}
