@@ -90,6 +90,53 @@ function flashLigths (){
 	
 }
 
+/** Esta funcion comprueba que la tecla pulsada se correcta,
+ * en caso contrario devuelve el valor de error=1;
+ *
+ * @param entero
+ * @return en caso de ser erroneo devuelve error=1;
+ */
+
+function comprobacion (x){
+	if (pulsado!=GameComputer[indice]){
+		error=1;
+		console.log("error en condicional boton"+error);
+	}else {
+		indice++;
+		console.log("sin error"+indice);}
+}
+
+/** Esta funcion reproduce la secuencia guardada en el array
+ * y genera una nueva posicion.
+ * 
+ * @param array
+ * @return nada
+ */
+
+function mostrar (array){
+	var z=0;
+	setInterval (function(){
+		if (i<GameComputer.length) {
+ligthsOff();
+console.log('entro en el bucle');
+			
+			if (GameComputer[z]==0) zero ();
+			if (GameComputer[z]==1) uno ();
+			if (GameComputer[z]==2) dos ();
+			if (GameComputer[z]==3) tres ();
+			z++
+			console.log(i+' vuelta');
+			console.log('valor variable despues de la primera vuelta'+i);
+		} 
+		},500);
+	error=0;
+	game ();
+	i=0
+	}
+
+
+
+
 var azar;	
 var GameComputer=[];
 var indice;
@@ -109,13 +156,11 @@ document.getElementById('start').onclick=function(){
 	flashLigths();
 	setTimeout(function(){
 		ligthsOff();
-		StarBtonOn=true;
-	},750);
+		},750);
 	document.getElementById('start').class="button disabled";
 	document.getElementById('start').disable=true;
 	game();
-	StarBtonOn=true;
-	console.log("estado de boton star"+StarBtonOn);
+	
 }	
 	
 function game (){		
@@ -128,8 +173,9 @@ function game (){
 			ligthsOff();
 		},500);
 		var objAudio = document.getElementById('audioBoton'+azar);
-		
-		objAudio.play();},1000);
+		objAudio.play();
+		},1000);
+	PlayerTurn=true;
 	
 }	
 
@@ -144,115 +190,77 @@ indice=GameComputer.length;
 
 document.getElementById('boton0').onclick=function(){
 	pulsado=0;
+	i++;
 	var objBoton = document.getElementById('boton0').src="img/boton0.png";
 	console.log('he pasado el encendido del boton0 por presion');
 	setTimeout(function(){
 			ligthsOff();
-		},500);
+		},200);
 	var objAudio = document.getElementById('audioBoton0');
 	objAudio.play();
-	if (pulsado!=GameComputer[indice]){
-		error=1;
-		StarBtonOn=false;
-		console.log("error en condicional boton"+error);
-	}else {
-		indice++;
-		console.log("sin error"+indice);}
-		
-}
+	comprobacion(indice);
+	if (i==GameComputer.length){
+        mostrar(GameComputer)		
+		}
+	}		
 
 
+
+
+	
 document.getElementById('boton1').onclick=function(){
 	pulsado=1;
+	i++;
 	this.style.opacity='1';
 	var objBoton = document.getElementById('boton1').src="img/boton1.png";
 	setTimeout(function(){
 			ligthsOff();
-		},500);
+		},200);
 	var objAudio = document.getElementById('audioBoton1');
 	objAudio.play();
-	if (pulsado!=GameComputer[indice]){
-		error=1;
-		StarBtonOn=false;
-		console.log("error en condicional boton"+error);
-	}else {
-		indice++;
-		console.log("sin error"+indice);}
-}
+	comprobacion(indice);
+	if (i==GameComputer.length){
+        mostrar(GameComputer)		
+		}
 
+}	
+	
 document.getElementById('boton2').onclick=function(){
-	pulsado=2
+	pulsado=2;
+	i++;
 	this.style.opacity='1';
 	var objBoton = document.getElementById('boton2').src="img/boton2.png";
 	setTimeout(function(){
 			ligthsOff();
 			StarBtonOn=false;
-		},500);
+		},200);
 	var objAudio = document.getElementById('audioBoton2');
 	objAudio.play();
-	if (pulsado!=GameComputer[indice]){
-		error=1;
-		StarBtonOn=false;
-		console.log("error en condicional boton"+error);
-	}else {
-		indice++;
-		console.log("sin error"+indice);}
-}
+	comprobacion(indice);
+	if (i==GameComputer.length){
+        mostrar(GameComputer)		
+		}
+	}	
+
 document.getElementById('boton3').onclick=function(){
-	pulsado=3
+	pulsado=3;
+	i++;
 	var objBoton = document.getElementById('boton3').src="img/boton3.png";
 	setTimeout(function(){
 			ligthsOff();
-		},500);
+		},200);
 	var objAudio = document.getElementById('audioBoton3');
 	objAudio.play();
-	if (pulsado!=GameComputer[indice]){
-		error=1;
-		StarBtonOn=false;
-		console.log("error en condicional boton"+error);
-	}else {
-		indice++;
-		console.log("sin error"+indice);}
-}
+	comprobacion(indice);
+	if (i==GameComputer.length){
+        mostrar(GameComputer)		
+		}
+	}	
 
 
 
-console.log(GameComputer.length)
-console.log("este es el comp antes del while "+CompTurn);
-console.log("este es el player antes del while "+PlayerTurn);
 
-
-	while (error==0 && StarBtonOn==true){
-	console.log("entro en el while")
-		if (CompTurn){
-		setInterval (function(){
-			if (i<GameComputer.length) {
-		ligthsOff();
-		console.log('entro en el bucle');
-					
-				if (GameComputer[i]==0) zero ();
-				if (GameComputer[i]==1) uno ();
-				if (GameComputer[i]==2) dos ();
-				if (GameComputer[i]==3) tres ();
-				i++
-				console.log(i+' vuelta');
-				
-				console.log('valor variable despues de la primera vuelta'+i);
-		} 
-			
-		},500);
-		Compturn=false;
-		error=0;
-		game ();
-		
-	}
-	if (PlayerTurn){
-		if (i==GameComputer.length)
-			Compturn=true;
-			Playerturn=false;
-			
-	}
-	}
+	
 			
 
 
