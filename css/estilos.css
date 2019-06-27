@@ -1,9 +1,13 @@
 @charset "UTF-8";
 
+body {
+  background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/nasty_fabric.png)
+}
+
 
 #caja .botones {
 	list-style:none;
-	width:80%;
+	width:100%;
 	margin: 0px auto;
 	text-align:center;
 	padding:10px;
@@ -27,4 +31,20 @@
 }
 #caja .botones li  img{
 	width:80px;
+}
+#puntuacion {
+  position: relative;
+  background: #330000;
+  top: -85px;
+  left:-20px;
+  color: red;
+  font-family: courier;
+  font-size: 20px;
+  height: 30px;
+  width: 50px;
+  margin-left: 90px;
+  margin-top: 170px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 30px;
 }

@@ -108,6 +108,7 @@ function comprobacion (){
 				// a partir de aqui damos la opcion a reiniciar el juego desde el principio
 				document.getElementById('start').value="Reintentar";
 				document.getElementById('start').disabled=false;
+				document.getElementById('start').style.opacity="1";
 			}else{
 				indice++
 			}
@@ -173,6 +174,7 @@ document.getElementById('start').onclick=function(){
 		},750);
 	// desabilitamos el boton star para que no se pueda apretar por error durante el juego
 	document.getElementById('start').disabled=true;
+	document.getElementById('start').style.opacity="0.7";
 	game();
 	
 }	
@@ -216,7 +218,7 @@ document.getElementById('boton0').onclick=function(){
 	objAudio.play();
 	// una vez pulsado comprobamos si la pulsacion es correcta con la siguiente funcion
 	comprobacion();
-	if (i==GameComputer.length){
+	if (i==GameComputer.length && error==0){
 		// si ya hemos pulsado toda la secuencia correctamente lanzamos la siguiente
         mostrar(GameComputer)		
 		}
@@ -237,7 +239,7 @@ document.getElementById('boton1').onclick=function(){
 	var objAudio = document.getElementById('audioBoton1');
 	objAudio.play();
 	comprobacion();
-	if (i==GameComputer.length){
+	if (i==GameComputer.length && error==0){
         mostrar(GameComputer)		
 		}
 
@@ -255,7 +257,7 @@ document.getElementById('boton2').onclick=function(){
 	var objAudio = document.getElementById('audioBoton2');
 	objAudio.play();
 	comprobacion();
-	if (i==GameComputer.length){
+	if (i==GameComputer.length && error==0){
         mostrar(GameComputer)		
 		}
 	}	
@@ -270,7 +272,7 @@ document.getElementById('boton3').onclick=function(){
 	var objAudio = document.getElementById('audioBoton3');
 	objAudio.play();
 	comprobacion();
-	if (i==GameComputer.length){
+	if (i==GameComputer.length && error==0){
         mostrar(GameComputer)		
 		}
 	}	
