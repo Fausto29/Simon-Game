@@ -99,13 +99,13 @@ function flashLigths (){
 
 function comprobacion (){
 	console.log("valor del indice:"+indice);
-	//console.log("valor del pulsado"+GamePlayer[GamePlayer.length]);
-	//console.log("valor de la matriz"+GameComputer[GamePlayer.length]);
 			if (pulsado != GameComputer[indice]){
+				// las instrucciones siguientes paran el juego
 				error=1;
 				puntuacion=GameComputer.length-1;
 				console.log("error en condicional boton"+error);
 				document.getElementById('puntuacion').value=puntuacion;
+				// a partir de aqui damos la opcion a reiniciar el juego desde el principio
 				document.getElementById('start').value="Reintentar";
 				document.getElementById('start').disabled=false;
 			}else{
@@ -123,10 +123,6 @@ function comprobacion (){
 
 function mostrar (array){
 	var z=0;
-	//document.getElementById('boton0').disabled=true;
-	//document.getElementById('boton1').disabled=true;
-	//document.getElementById('boton2').disabled=true;
-	//document.getElementById('boton3').disabled=true;
 	setInterval (function(){
 		if (i<GameComputer.length && error==0) {
 ligthsOff();
@@ -140,6 +136,11 @@ console.log('entro en el bucle');
 		} 
 		},750);
 	error=0;
+	/* tenemos que introducir un setTimeout con tal de que la funcion se ejecute despues de
+	 * que se muestren todos los elementos del Array. Con tal de que sea lo mas exacto posible
+	 * se crea una variable time a la cual se le da el valor de la longitud de la array y
+	 * multiplica por el tiempo que tarda en dar una vuelta la muestra
+	 */ 
 	var time=GameComputer.length*750
 	setTimeout (function(){
 			game ();
@@ -164,15 +165,23 @@ document.getElementById('start').onclick=function(){
 	  indice=0;
 	  puntuacion=0;
 	  document.getElementById('puntuacion').value=puntuacion;
-	flashLigths();
+	// la funcion flashLights enciende todas las luces pero no reproduce el sonido para que no sea molesto
+	  flashLigths();
 	setTimeout(function(){
+		// la funcion flashOff apaga todas las luces es recurrente en el programa.
 		ligthsOff();
 		},750);
+	// desabilitamos el boton star para que no se pueda apretar por error durante el juego
 	document.getElementById('start').disabled=true;
 	game();
 	
 }	
-	
+/** Esta funcion genera un numero aleatorio entre 0 i 3
+ * cada numero esta asociado a un boton.
+ * gardamos la informacion en un array y reproducimos els sonido y encendemos 
+ * el boton asociado a ese numero 
+ * @return nada
+ */	
 function game (){		
 	azar=getRndInteger(0,3);
 	GameComputer.push(azar);
@@ -190,12 +199,14 @@ function game (){
 		//console.log("esta la matriz del jugador despues del game"+GamePlayer);
 }	
 
+/* a partir de aqui entramos en la configuracion de los botones y todos tendran
+ * la misma configuracion solo cambia la imagen i el sonido que se carga y el valor de 
+ * la variable pulsado que para cada boton tiene un valor diferente entre 0 y 3
+ */
 
 document.getElementById('boton0').onclick=function(){
 	pulsado=0;
 	i++
-	//GamePlayer.push(pulsado);
-	//console.log("matriz game player "+GamePlayer);
 	var objBoton = document.getElementById('boton0').src="img/boton0.png";
 	console.log('he pasado el encendido del boton0 por presion');
 	setTimeout(function(){
@@ -203,8 +214,10 @@ document.getElementById('boton0').onclick=function(){
 		},300);
 	var objAudio = document.getElementById('audioBoton0');
 	objAudio.play();
+	// una vez pulsado comprobamos si la pulsacion es correcta con la siguiente funcion
 	comprobacion();
 	if (i==GameComputer.length){
+		// si ya hemos pulsado toda la secuencia correctamente lanzamos la siguiente
         mostrar(GameComputer)		
 		}
 	}		
@@ -216,8 +229,6 @@ document.getElementById('boton0').onclick=function(){
 document.getElementById('boton1').onclick=function(){
 	pulsado=1;
 	i++;
-	//GamePlayer.push(pulsado);
-	//console.log("matriz game player "+GamePlayer);
 	this.style.opacity='1';
 	var objBoton = document.getElementById('boton1').src="img/boton1.png";
 	setTimeout(function(){
@@ -235,8 +246,6 @@ document.getElementById('boton1').onclick=function(){
 document.getElementById('boton2').onclick=function(){
 	pulsado=2;
 	i++;
-	//GamePlayer.push(pulsado);
-	//console.log("matriz game player "+GamePlayer);
 	this.style.opacity='1';
 	var objBoton = document.getElementById('boton2').src="img/boton2.png";
 	setTimeout(function(){
@@ -254,8 +263,6 @@ document.getElementById('boton2').onclick=function(){
 document.getElementById('boton3').onclick=function(){
 	pulsado=3;
 	i++;
-	//GamePlayer.push(pulsado);
-	//console.log("matriz game player "+GamePlayer);
 	var objBoton = document.getElementById('boton3').src="img/boton3.png";
 	setTimeout(function(){
 			ligthsOff();
