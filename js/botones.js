@@ -100,17 +100,31 @@ function flashLigths (){
 function comprobacion (){
 	console.log("valor del indice:"+indice);
 			if (pulsado != GameComputer[indice]){
-				// las instrucciones siguientes paran el juego
-				error=1;
-				puntuacion=GameComputer.length-1;
-				console.log("error en condicional boton"+error);
-				document.getElementById('puntuacion').value=puntuacion;
-				// a partir de aqui damos la opcion a reiniciar el juego desde el principio
-				document.getElementById('start').value="Reintentar";
-				document.getElementById('start').disabled=false;
-				document.getElementById('start').style.opacity="1";
+				if (strictmode==false){
+					var z=0;
+					console.log('cuando strict mode off');
+					setInterval (function(){
+						ligthsOff();
+						console.log('entro en el bucle');
+						if (GameComputer[z]==0) zero ();
+						if (GameComputer[z]==1) uno ();
+						if (GameComputer[z]==2) dos ();
+						if (GameComputer[z]==3) tres ();
+						z++;
+					},750);
+				}else {
+					// las instrucciones siguientes paran el juego
+					error=1;
+					puntuacion=GameComputer.length-1;
+					console.log("error en condicional boton"+error);
+					document.getElementById('puntuacion').value=puntuacion;
+					// a partir de aqui damos la opcion a reiniciar el juego desde el principio
+					document.getElementById('start').value="Reintentar";
+					document.getElementById('start').disabled=false;
+					document.getElementById('start').style.opacity="1";
+						}
 			}else{
-				indice++
+				indice++;
 			}
 		
 }
@@ -157,6 +171,33 @@ var indice=0;
 var error=0;
 var i=0;
 var puntuacion=0;
+var strictmode=true;
+var sound=true;
+
+document.getElementById('sound').onclick=function(){
+	if (sound==true){
+		document.getElementById('sound').src="img/soundOff.png";
+		sound=false;
+		console.log('valor de sound '+sound);
+	}else {
+		document.getElementById('sound').src="img/soundtOn.png";
+		sound=true;
+		console.log('valor de strict '+sound);
+	}
+}
+
+document.getElementById('strict').onclick=function(){
+	
+	if (strictmode==true){
+		document.getElementById('strict').src="img/strictOff.png";
+		strictmode=false;
+		console.log('valor de strict '+strictmode);
+	}else {
+		document.getElementById('strict').src="img/strictOn.png";
+		strictmode=true;
+		console.log('valor de strict '+strictmode);
+	}
+}
 
 
 document.getElementById('start').onclick=function(){

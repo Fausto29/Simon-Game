@@ -36,7 +36,7 @@ body {
   position: relative;
   background: #330000;
   top: -85px;
-  left:-20px;
+  left: 0px;
   color: red;
   font-family: courier;
   font-size: 20px;
@@ -47,4 +47,18 @@ body {
   text-align: center;
   vertical-align: middle;
   line-height: 30px;
+}
+#strict {
+	position: absolute;
+	top:0px;
+	left:0px;
+	height:45%;
+	width:40%;
+}
+#sound {
+	position: absolute;
+	top:40px;
+	left:60px;
+	height:35%;
+	width:30%;
 }
