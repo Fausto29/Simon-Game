@@ -69,3 +69,110 @@ body {
 	height:100px;
 	width:100px;
 }
+
+#simonc {
+	position: absolute;
+	top:25px;
+	left:150px;
+	height:60px;
+	width:150px;
+}
+
+#simons {
+	position: absolute;
+	top:105px;
+	left:150px;
+	height:60px;
+	width:150px;
+}
+
+#simonm {
+	position: absolute;
+	top:185px;
+	left:150px;
+	height:60px;
+	width:150px;
+}
+
+#simoncselect {
+	position: relative;
+	top:40px;
+	left:315px;
+	height:20px;
+	width:20px;
+	
+}
+
+#simonsselect {
+	position: absolute;
+	top:125px;
+	left:325px;
+	height:20px;
+	width:20px;
+	
+}
+
+#simonmselect {
+	position: absolute;
+	top:205px;
+	left:325px;
+	height:20px;
+	width:20px;
+	
+}
+
+#botonB6 {
+	position: absolute;
+	top:0px;
+	left:650px;
+	
+}
+
+#botonA0 {
+	position: absolute;
+	top:50px;
+	left:550px;
+	
+}
+
+#botonA2 {
+	position: absolute;
+	top:150px;
+	left:500px;
+	
+}
+
+#botonA4 {
+	position: absolute;
+	top:300px;
+	left:550px;
+	
+}
+
+#botonB7 {
+	position: absolute;
+	top:350px;
+	left:650px;
+	
+}
+
+#botonA5 {
+	position: absolute;
+	top:300px;
+	left:780px;
+	
+}
+
+#botonA3 {
+	position: absolute;
+	top:150px;
+	left:850px;
+	
+}
+
+#botonA1 {
+	position: absolute;
+	top:50px;
+	left:780px;
+	
+}

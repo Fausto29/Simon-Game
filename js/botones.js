@@ -190,6 +190,69 @@ var puntuacion=0;
 var strictmode=true;
 var sound=true;
 var image=true;
+var gameMode;
+
+document.getElementById('simonc').onclick=function(){
+	document.getElementById('simoncselect').src="img/botonselecionadoOn.png";
+	document.getElementById('simonsselect').src="img/botonselecionadoOff.png";
+	document.getElementById('simonmselect').src="img/botonselecionadoOff.png";
+	document.getElementById('boton0').style="display: inline";
+	document.getElementById('boton1').style="display: inline";
+	document.getElementById('boton2').style="display: inline";
+	document.getElementById('boton3').style="display: inline";
+	document.getElementById('botonA0').style="display: none";
+	document.getElementById('botonA1').style="display: none";
+	document.getElementById('botonA2').style="display: none";
+	document.getElementById('botonA3').style="display: none";
+	document.getElementById('botonA4').style="display: none";
+	document.getElementById('botonA5').style="display: none";
+	document.getElementById('botonB6').style="display: none";
+	document.getElementById('botonB7').style="display: none";
+	gameMode=3;
+	
+}
+
+document.getElementById('simons').onclick=function(){
+	document.getElementById('simonsselect').src="img/botonselecionadoOn.png";
+	document.getElementById('simoncselect').src="img/botonselecionadoOff.png";
+	document.getElementById('simonmselect').src="img/botonselecionadoOff.png";
+	document.getElementById('boton0').style="display: none";
+	document.getElementById('boton1').style="display: none";
+	document.getElementById('boton2').style="display: none";
+	document.getElementById('boton3').style="display: none";
+	document.getElementById('botonA0').style="display: inline";
+	document.getElementById('botonA1').style="display: inline";
+	document.getElementById('botonA2').style="display: inline";
+	document.getElementById('botonA3').style="display: inline";
+	document.getElementById('botonA4').style="display: inline";
+	document.getElementById('botonA5').style="display: inline";
+	document.getElementById('botonB6').style="display: none";
+	document.getElementById('botonB7').style="display: none";
+	gameMode=5;
+	
+}
+
+document.getElementById('simonm').onclick=function(){
+	document.getElementById('simonmselect').src="img/botonselecionadoOn.png";
+	document.getElementById('simonsselect').src="img/botonselecionadoOff.png";
+	document.getElementById('simoncselect').src="img/botonselecionadoOff.png";
+	document.getElementById('boton0').style="display: none";
+	document.getElementById('boton1').style="display: none";
+	document.getElementById('boton2').style="display: none";
+	document.getElementById('boton3').style="display: none";
+	document.getElementById('botonA0').style="display: inline";
+	document.getElementById('botonA1').style="display: inline";
+	document.getElementById('botonA2').style="display: inline";
+	document.getElementById('botonA3').style="display: inline";
+	document.getElementById('botonA4').style="display: inline";
+	document.getElementById('botonA5').style="display: inline";
+	document.getElementById('botonB6').style="display: inline";
+	document.getElementById('botonB7').style="display: inline";
+	gameMode=7;
+	
+}
+
+
 
 document.getElementById('image').onclick=function(){
 	if (image==true && sound!=false){
@@ -245,6 +308,9 @@ document.getElementById('start').onclick=function(){
 		},750);
 	// desabilitamos el boton star para que no se pueda apretar por error durante el juego
 	document.getElementById('start').disabled=true;
+	document.getElementById('simonc').disabled=true;
+	document.getElementById('simons').disabled=true;
+	document.getElementById('simonm').disabled=true;
 	document.getElementById('start').style.opacity="0.7";
 	game();
 	
