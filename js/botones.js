@@ -19,9 +19,13 @@ function getRndInteger(min, max) {
  * @returns nada
  */
 function zero (){
+	if (sound== true){
 	var objAudio = document.getElementById('audioBoton0');
 	objAudio.play();
+	}
+	if (image==true){
 	var objBoton = document.getElementById('boton0').src="img/boton0.png";
+	}
 }
 
 /**
@@ -31,9 +35,13 @@ function zero (){
  * @returns nada
  */
 function uno (){
+	if (sound== true){
 	var objAudio = document.getElementById('audioBoton1');
 	objAudio.play();
+	}
+	if (image==true){
 	var objBoton = document.getElementById('boton1').src="img/boton1.png";
+	}
 
 }
 /**
@@ -43,9 +51,13 @@ function uno (){
  * @returns nada
  */
 function dos (){
+	if (sound== true){
 	var objAudio = document.getElementById('audioBoton2');
 	objAudio.play();
+	}
+	if (image==true){
 	var objBoton = document.getElementById('boton2').src="img/boton2.png";
+	}
 }
 
 /**
@@ -55,9 +67,13 @@ function dos (){
  * @returns nada
  */
 function tres (){
+	if (sound== true){
 	var objAudio = document.getElementById('audioBoton3');
 	objAudio.play();
+	}
+	if (image==true){
 	var objBoton = document.getElementById('boton3').src="img/boton3.png";
+	}
 }
 
 /**
@@ -173,14 +189,28 @@ var i=0;
 var puntuacion=0;
 var strictmode=true;
 var sound=true;
+var image=true;
+
+document.getElementById('image').onclick=function(){
+	if (image==true && sound!=false){
+		document.getElementById('image').src="img/imageOff.png";
+		image=false;
+		console.log('valor de image '+image);
+	}else {
+		document.getElementById('image').src="img/imageOn.png";
+		image=true;
+		console.log('valor de image '+image);
+	}
+}
+
 
 document.getElementById('sound').onclick=function(){
-	if (sound==true){
+	if (sound==true && image!=false){
 		document.getElementById('sound').src="img/soundOff.png";
 		sound=false;
 		console.log('valor de sound '+sound);
 	}else {
-		document.getElementById('sound').src="img/soundtOn.png";
+		document.getElementById('sound').src="img/soundOn.png";
 		sound=true;
 		console.log('valor de strict '+sound);
 	}
@@ -230,12 +260,16 @@ function game (){
 	GameComputer.push(azar);
 	console.log("en la funcion inicio azar es "+azar);
 	setTimeout(function(){
+		if (image==true){
 		var objBoton = document.getElementById('boton'+azar).src="img/boton"+azar+".png";
 		setTimeout(function(){
 			ligthsOff();
 		},500);
+		}
+		if (sound==true){
 		var objAudio = document.getElementById('audioBoton'+azar);
 		objAudio.play();
+		}
 	},750);
 		console.log("esta es la matriz del juego "+GameComputer);
 		indice=0;
@@ -250,13 +284,17 @@ function game (){
 document.getElementById('boton0').onclick=function(){
 	pulsado=0;
 	i++
+	if (image==true){
 	var objBoton = document.getElementById('boton0').src="img/boton0.png";
 	console.log('he pasado el encendido del boton0 por presion');
 	setTimeout(function(){
 			ligthsOff();
-		},300);
+		},500);
+	}
+	if (sound==true){
 	var objAudio = document.getElementById('audioBoton0');
 	objAudio.play();
+	}
 	// una vez pulsado comprobamos si la pulsacion es correcta con la siguiente funcion
 	comprobacion();
 	if (i==GameComputer.length && error==0){
@@ -272,13 +310,16 @@ document.getElementById('boton0').onclick=function(){
 document.getElementById('boton1').onclick=function(){
 	pulsado=1;
 	i++;
-	this.style.opacity='1';
+	if (image==true){
 	var objBoton = document.getElementById('boton1').src="img/boton1.png";
 	setTimeout(function(){
 			ligthsOff();
-		},300);
+		},500);
+	}
+	if (sound== true){
 	var objAudio = document.getElementById('audioBoton1');
 	objAudio.play();
+	}
 	comprobacion();
 	if (i==GameComputer.length && error==0){
         mostrar(GameComputer)		
@@ -289,14 +330,17 @@ document.getElementById('boton1').onclick=function(){
 document.getElementById('boton2').onclick=function(){
 	pulsado=2;
 	i++;
-	this.style.opacity='1';
+	if (image==true){
 	var objBoton = document.getElementById('boton2').src="img/boton2.png";
 	setTimeout(function(){
 			ligthsOff();
 			StarBtonOn=false;
-		},300);
+		},500);
+	}
+	if (sound== true){
 	var objAudio = document.getElementById('audioBoton2');
 	objAudio.play();
+	}
 	comprobacion();
 	if (i==GameComputer.length && error==0){
         mostrar(GameComputer)		
@@ -306,12 +350,16 @@ document.getElementById('boton2').onclick=function(){
 document.getElementById('boton3').onclick=function(){
 	pulsado=3;
 	i++;
+	if (image==true){
 	var objBoton = document.getElementById('boton3').src="img/boton3.png";
 	setTimeout(function(){
 			ligthsOff();
-		},300);
+		},500);
+	}
+	if (sound== true){
 	var objAudio = document.getElementById('audioBoton3');
 	objAudio.play();
+	}
 	comprobacion();
 	if (i==GameComputer.length && error==0){
         mostrar(GameComputer)		
