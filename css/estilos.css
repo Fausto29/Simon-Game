@@ -33,10 +33,10 @@ body {
 	width:80px;
 }
 #puntuacion {
-  position: relative;
+  position: absolute;
   background: #330000;
-  top: -85px;
-  left: 0px;
+  top: 30px;
+  left: 650px;
   color: red;
   font-family: courier;
   font-size: 20px;
@@ -137,15 +137,15 @@ body {
 
 #botonA2 {
 	position: absolute;
-	top:150px;
-	left:500px;
+	top:300px;
+	left:550px;
 	
 }
 
 #botonA4 {
 	position: absolute;
-	top:300px;
-	left:550px;
+	top:150px;
+	left:500px;
 	
 }
 
@@ -158,16 +158,15 @@ body {
 
 #botonA5 {
 	position: absolute;
-	top:300px;
-	left:780px;
+	top:150px;
+	left:850px;
 	
 }
 
 #botonA3 {
 	position: absolute;
-	top:150px;
-	left:850px;
-	
+	top:300px;
+	left:780px;
 }
 
 #botonA1 {
@@ -175,4 +174,15 @@ body {
 	top:50px;
 	left:780px;
 	
+}
+#score {
+  position: absolute;	
+  background: transparent;
+  top: 160px;
+  left: 745px;
+  text-align: center;
+  height:20px;
+  width:40px;
+  
+  
 }

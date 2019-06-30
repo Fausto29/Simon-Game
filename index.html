@@ -7,9 +7,9 @@
 </head>
 <style>
 .button {
-  position: relative;
-  top: 0px;
-  left: 80px;
+  position: absolute;
+  top: 195px;
+  left: 600px;
   background-color: #336EFF; /* Lila */
   border: none;
   color: white;
@@ -40,7 +40,7 @@
 	<input type="image" alt="" src="img/soundOn.png" id="sound">
 	<input type="image" alt="" src="img/imageOn.png" id="image">
 	<input type="image" alt="" src="img/simonC.png" id="simonc">
-	<input type="image" alt="" src="img/botonselecionadoOn.png" id="simoncselect">
+	<input type="image" alt="" src="img/botonselecionadoOff.png" id="simoncselect">
 	<input type="image" alt="" src="img/simonS.png" id="simons">
 	<input type="image" alt="" src="img/botonselecionadoOff.png" id="simonsselect">
 	<input type="image" alt="" src="img/simonM.png" id="simonm">
@@ -75,7 +75,8 @@
 	</ul>
 	<div class="controles">
 			<input class="button" value="Empezar" id="start">
-			<input id="puntuacion" Type="text" value=""readonly>Puntuación
+			<input id="puntuacion" Type="text" value=""readonly>
+			<input id="score" Type="text" value="Score"readonly>
 	</div>
 </div>
 <audio id="audioBoton0" src="audio/audioBoton0.mp3"></audio>
