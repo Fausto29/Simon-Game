@@ -13,6 +13,32 @@ function getRndInteger(min, max) {
 }
 
 /**
+ * Esta funcion JavaScript canvia la imagen del boton 4 
+ * botones para que se encienda y reproduzca un sonido
+ *  
+ * @returns nada
+ */
+
+function countdown (){
+	document.getElementById("cuentaatras").value=time;
+	  time=time-1;
+	  if (time<0){
+	  clearInterval (controlTime);
+	  error=1;
+		puntuacion=GameComputer.length-1;
+		console.log("tiempo finalizado");
+		document.getElementById('puntuacion').value=puntuacion;
+		// a partir de aqui damos la opcion a reiniciar el juego desde el principio
+		document.getElementById('start').value="Reintentar";
+		document.getElementById('start').disabled=false;
+		document.getElementById('start').style.opacity="1";
+		document.getElementById('simonc').disabled=false;
+		document.getElementById('simons').disabled=false;
+		document.getElementById('simonm').disabled=false;
+	  }
+}
+
+/**
  * Esta funcion JavaScript canvia la imagen del boton 0 
  * botones para que se encienda y reproduzca un sonido
  *  
@@ -240,6 +266,7 @@ function comprobacion (){
 
 function mostrar (array){
 	var z=0;
+	clearInterval (controlTime);
 	setInterval (function(){
 		if (i<GameComputer.length && error==0) {
 ligthsOff();
@@ -281,6 +308,8 @@ var strictmode=true;
 var sound=true;
 var image=true;
 var gameMode;
+var time=10;
+var controlTime;
 
 document.getElementById('simonc').onclick=function(){
 	document.getElementById('simoncselect').src="img/botonselecionadoOn.png";
@@ -379,6 +408,7 @@ document.getElementById('start').onclick=function(){
 	  error=0;
 	  indice=0;
 	  puntuacion=0;
+	  time=10;
 	  document.getElementById('puntuacion').value=puntuacion;
 	// la funcion flashLights enciende todas las luces pero no reproduce el sonido para que no sea molesto
 	  flashLigths();
@@ -420,7 +450,9 @@ function game (){
 		}
 	},1000);
 		console.log("esta es la matriz del juego "+GameComputer);
+		controlTime=setInterval(countdown,1000);
 		indice=0;
+		
 		//console.log("esta la matriz del jugador despues del game"+GamePlayer);
 }	
 
@@ -430,6 +462,7 @@ function game (){
  */
 
 document.getElementById('botonA0').onclick=function(){
+	time=10;
 	pulsado=0;
 	i++
 	if (image==true){
@@ -456,6 +489,7 @@ document.getElementById('botonA0').onclick=function(){
 
 	
 document.getElementById('botonA1').onclick=function(){
+	time=10;
 	pulsado=1;
 	i++;
 	if (image==true){
@@ -476,6 +510,7 @@ document.getElementById('botonA1').onclick=function(){
 }	
 	
 document.getElementById('botonA2').onclick=function(){
+	time=10;
 	pulsado=2;
 	i++;
 	if (image==true){
@@ -496,6 +531,7 @@ document.getElementById('botonA2').onclick=function(){
 	}	
 
 document.getElementById('botonA3').onclick=function(){
+	time=10;
 	pulsado=3;
 	i++;
 	if (image==true){
@@ -515,6 +551,7 @@ document.getElementById('botonA3').onclick=function(){
 	}	
 
 document.getElementById('botonA4').onclick=function(){
+	time=10;
 	pulsado=4;
 	i++;
 	if (image==true){
@@ -534,6 +571,7 @@ document.getElementById('botonA4').onclick=function(){
 	}
 
 document.getElementById('botonA5').onclick=function(){
+	time=10;
 	pulsado=5;
 	i++;
 	if (image==true){
@@ -553,6 +591,7 @@ document.getElementById('botonA5').onclick=function(){
 	}
 
 document.getElementById('botonA6').onclick=function(){
+	time=10;
 	pulsado=6;
 	i++;
 	if (image==true){
@@ -571,6 +610,7 @@ document.getElementById('botonA6').onclick=function(){
 		}
 	}
 document.getElementById('botonA7').onclick=function(){
+	time=10;
 	pulsado=7;
 	i++;
 	if (image==true){
@@ -588,6 +628,9 @@ document.getElementById('botonA7').onclick=function(){
         mostrar(GameComputer)		
 		}
 	}
+
+
+
 
 
 

@@ -188,5 +188,36 @@ body {
   width:50px;
   border:0px;
   
+}
+
+#cuentaatras {
+  position: absolute;
+  background: #330000;
+  top: -100px;
+  left: 900px;
+  color: red;
+  font-family: courier;
+  font-size: 20px;
+  height: 30px;
+  width: 50px;
+  margin-left: 90px;
+  margin-top: 170px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 30px;
+}
+
+#time {
+  position: absolute;	
+  background: transparent;
+  font-family:verdana;
+  color: black;
+  font-weight: 1000;
+  top: 50px;
+  left: 990px;
+  text-align: center;
+  height:20px;
+  width:50px;
+  border:0px;
   
 }
