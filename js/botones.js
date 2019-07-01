@@ -24,7 +24,7 @@ function zero (){
 	objAudio.play();
 	}
 	if (image==true){
-	var objBoton = document.getElementById('boton0').src="img/boton0.png";
+	var objBoton = document.getElementById('botonA0').src="img/botonA0On.png";
 	}
 }
 
@@ -40,7 +40,7 @@ function uno (){
 	objAudio.play();
 	}
 	if (image==true){
-	var objBoton = document.getElementById('boton1').src="img/boton1.png";
+	var objBoton = document.getElementById('botonA1').src="img/botonA1On.png";
 	}
 
 }
@@ -56,7 +56,7 @@ function dos (){
 	objAudio.play();
 	}
 	if (image==true){
-	var objBoton = document.getElementById('boton2').src="img/boton2.png";
+	var objBoton = document.getElementById('botonA2').src="img/botonA2On.png";
 	}
 }
 
@@ -72,9 +72,80 @@ function tres (){
 	objAudio.play();
 	}
 	if (image==true){
-	var objBoton = document.getElementById('boton3').src="img/boton3.png";
+	var objBoton = document.getElementById('botonA3').src="img/botonA3On.png";
 	}
 }
+
+/**
+ * Esta funcion JavaScript canvia la imagen del boton 4 
+ * botones para que se encienda y reproduzca un sonido
+ *  
+ * @returns nada
+ */
+function cuatro (){
+	console.log ("estoy en la funcion mostrar 4");
+	if (sound== true){
+	var objAudio = document.getElementById('audioBoton4');
+	objAudio.play();
+	}
+	if (image==true){
+	var objBoton = document.getElementById('botonA4').src="img/botonA4On.png";
+	}
+}
+
+/**
+ * Esta funcion JavaScript canvia la imagen del boton 5 
+ * botones para que se encienda y reproduzca un sonido
+ *  
+ * @returns nada
+ */
+function cinco (){
+	console.log ("estoy en la funcion mostrar 5");
+	if (sound== true){
+	var objAudio = document.getElementById('audioBoton5');
+	objAudio.play();
+	}
+	if (image==true){
+	var objBoton = document.getElementById('botonA5').src="img/botonA5On.png";
+	}
+}
+
+/**
+ * Esta funcion JavaScript canvia la imagen del boton 6 
+ * botones para que se encienda y reproduzca un sonido
+ *  
+ * @returns nada
+ */
+function seis (){
+	console.log ("estoy en la funcion mostrar 6");
+	if (sound== true){
+	var objAudio = document.getElementById('audioBoton6');
+	objAudio.play();
+	}
+	if (image==true){
+	var objBoton = document.getElementById('botonA6').src="img/botonA6On.png";
+	}
+}
+
+/**
+ * Esta funcion JavaScript canvia la imagen del boton 7 
+ * botones para que se encienda y reproduzca un sonido
+ *  
+ * @returns nada
+ */
+function siete (){
+	console.log ("estoy en la funcion mostrar 7");
+	if (sound== true){
+	var objAudio = document.getElementById('audioBoton7');
+	objAudio.play();
+	}
+	if (image==true){
+	var objBoton = document.getElementById('botonA7').src="img/botonA7On.png";
+	}
+}
+
+
+
 
 /**
  * Esta funcion JavaScript canvia la imagen de los 
@@ -84,10 +155,14 @@ function tres (){
  */
 
 function ligthsOff (){
-	document.getElementById('boton0').src="img/boton0off.png";
-	document.getElementById('boton1').src="img/boton1off.png";
-	document.getElementById('boton2').src="img/boton2off.png";
-	document.getElementById('boton3').src="img/boton3off.png";
+	document.getElementById('botonA0').src="img/botonA0Off.png";
+	document.getElementById('botonA1').src="img/botonA1Off.png";
+	document.getElementById('botonA2').src="img/botonA2Off.png";
+	document.getElementById('botonA3').src="img/botonA3Off.png";
+	document.getElementById('botonA4').src="img/botonA4Off.png";
+	document.getElementById('botonA5').src="img/botonA5Off.png";
+	document.getElementById('botonA6').src="img/botonA6Off.png";
+	document.getElementById('botonA7').src="img/botonA7Off.png";
 } 
 
 /**
@@ -98,10 +173,14 @@ function ligthsOff (){
  */
 
 function flashLigths (){
-	document.getElementById('boton0').src="img/boton0.png";
-	document.getElementById('boton1').src="img/boton1.png";
-	document.getElementById('boton2').src="img/boton2.png";
-	document.getElementById('boton3').src="img/boton3.png";
+	document.getElementById('botonA0').src="img/botonA0On.png";
+	document.getElementById('botonA1').src="img/botonA1On.png";
+	document.getElementById('botonA2').src="img/botonA2On.png";
+	document.getElementById('botonA3').src="img/botonA3On.png";
+	document.getElementById('botonA4').src="img/botonA4On.png";
+	document.getElementById('botonA5').src="img/botonA5On.png";
+	document.getElementById('botonA6').src="img/botonA6On.png";
+	document.getElementById('botonA7').src="img/botonA7On.png";
 
 	
 }
@@ -126,8 +205,12 @@ function comprobacion (){
 						if (GameComputer[z]==1) uno ();
 						if (GameComputer[z]==2) dos ();
 						if (GameComputer[z]==3) tres ();
+						if (GameComputer[z]==4) cuatro ();
+						if (GameComputer[z]==5) cinco ();
+						if (GameComputer[z]==6) seis ();
+						if (GameComputer[z]==7) siete ();
 						z++;
-					},750);
+					},1250);
 				}else {
 					// las instrucciones siguientes paran el juego
 					error=1;
@@ -138,6 +221,9 @@ function comprobacion (){
 					document.getElementById('start').value="Reintentar";
 					document.getElementById('start').disabled=false;
 					document.getElementById('start').style.opacity="1";
+					document.getElementById('simonc').disabled=false;
+					document.getElementById('simons').disabled=false;
+					document.getElementById('simonm').disabled=false;
 						}
 			}else{
 				indice++;
@@ -163,16 +249,20 @@ console.log('entro en el bucle');
 			if (GameComputer[z]==1) uno ();
 			if (GameComputer[z]==2) dos ();
 			if (GameComputer[z]==3) tres ();
+			if (GameComputer[z]==4) cuatro ();
+			if (GameComputer[z]==5) cinco ();
+			if (GameComputer[z]==6) seis ();
+			if (GameComputer[z]==7) siete ();
 			z++;
 		} 
-		},750);
+		},1250);
 	error=0;
 	/* tenemos que introducir un setTimeout con tal de que la funcion se ejecute despues de
 	 * que se muestren todos los elementos del Array. Con tal de que sea lo mas exacto posible
 	 * se crea una variable time a la cual se le da el valor de la longitud de la array y
 	 * multiplica por el tiempo que tarda en dar una vuelta la muestra
 	 */ 
-	var time=GameComputer.length*750
+	var time=GameComputer.length*1250;
 	setTimeout (function(){
 			game ();
 	},time);
@@ -196,18 +286,14 @@ document.getElementById('simonc').onclick=function(){
 	document.getElementById('simoncselect').src="img/botonselecionadoOn.png";
 	document.getElementById('simonsselect').src="img/botonselecionadoOff.png";
 	document.getElementById('simonmselect').src="img/botonselecionadoOff.png";
-	document.getElementById('boton0').style="display: inline";
-	document.getElementById('boton1').style="display: inline";
-	document.getElementById('boton2').style="display: inline";
-	document.getElementById('boton3').style="display: inline";
-	document.getElementById('botonA0').style="display: none";
-	document.getElementById('botonA1').style="display: none";
-	document.getElementById('botonA2').style="display: none";
-	document.getElementById('botonA3').style="display: none";
+	document.getElementById('botonA0').style="display: inline";
+	document.getElementById('botonA1').style="display: inline";
+	document.getElementById('botonA2').style="display: inline";
+	document.getElementById('botonA3').style="display: inline";
 	document.getElementById('botonA4').style="display: none";
 	document.getElementById('botonA5').style="display: none";
-	document.getElementById('botonB6').style="display: none";
-	document.getElementById('botonB7').style="display: none";
+	document.getElementById('botonA6').style="display: none";
+	document.getElementById('botonA7').style="display: none";
 	gameMode=3;
 	
 }
@@ -216,18 +302,14 @@ document.getElementById('simons').onclick=function(){
 	document.getElementById('simonsselect').src="img/botonselecionadoOn.png";
 	document.getElementById('simoncselect').src="img/botonselecionadoOff.png";
 	document.getElementById('simonmselect').src="img/botonselecionadoOff.png";
-	document.getElementById('boton0').style="display: none";
-	document.getElementById('boton1').style="display: none";
-	document.getElementById('boton2').style="display: none";
-	document.getElementById('boton3').style="display: none";
 	document.getElementById('botonA0').style="display: inline";
 	document.getElementById('botonA1').style="display: inline";
 	document.getElementById('botonA2').style="display: inline";
 	document.getElementById('botonA3').style="display: inline";
 	document.getElementById('botonA4').style="display: inline";
 	document.getElementById('botonA5').style="display: inline";
-	document.getElementById('botonB6').style="display: none";
-	document.getElementById('botonB7').style="display: none";
+	document.getElementById('botonA6').style="display: none";
+	document.getElementById('botonA7').style="display: none";
 	gameMode=5;
 	
 }
@@ -236,18 +318,14 @@ document.getElementById('simonm').onclick=function(){
 	document.getElementById('simonmselect').src="img/botonselecionadoOn.png";
 	document.getElementById('simonsselect').src="img/botonselecionadoOff.png";
 	document.getElementById('simoncselect').src="img/botonselecionadoOff.png";
-	document.getElementById('boton0').style="display: none";
-	document.getElementById('boton1').style="display: none";
-	document.getElementById('boton2').style="display: none";
-	document.getElementById('boton3').style="display: none";
 	document.getElementById('botonA0').style="display: inline";
 	document.getElementById('botonA1').style="display: inline";
 	document.getElementById('botonA2').style="display: inline";
 	document.getElementById('botonA3').style="display: inline";
 	document.getElementById('botonA4').style="display: inline";
 	document.getElementById('botonA5').style="display: inline";
-	document.getElementById('botonB6').style="display: inline";
-	document.getElementById('botonB7').style="display: inline";
+	document.getElementById('botonA6').style="display: inline";
+	document.getElementById('botonA7').style="display: inline";
 	gameMode=7;
 	
 }
@@ -294,7 +372,9 @@ document.getElementById('strict').onclick=function(){
 
 
 document.getElementById('start').onclick=function(){
-	 GameComputer=[];
+	  
+	if (gameMode>0){
+	  GameComputer=[];
 	  i=0;
 	  error=0;
 	  indice=0;
@@ -313,6 +393,7 @@ document.getElementById('start').onclick=function(){
 	document.getElementById('simonm').disabled=true;
 	document.getElementById('start').style.opacity="0.7";
 	game();
+	}
 	
 }	
 /** Esta funcion genera un numero aleatorio entre 0 i 3
@@ -322,21 +403,22 @@ document.getElementById('start').onclick=function(){
  * @return nada
  */	
 function game (){		
-	azar=getRndInteger(0,3);
+	azar=getRndInteger(0,gameMode);
 	GameComputer.push(azar);
 	console.log("en la funcion inicio azar es "+azar);
 	setTimeout(function(){
 		if (image==true){
-		var objBoton = document.getElementById('boton'+azar).src="img/boton"+azar+".png";
+		var objBoton = document.getElementById('botonA'+azar).src="img/botonA"+azar+"On.png";
 		setTimeout(function(){
 			ligthsOff();
-		},500);
+		},750);
 		}
 		if (sound==true){
 		var objAudio = document.getElementById('audioBoton'+azar);
+		console.log("esta es la variable de audio "+ objAudio);
 		objAudio.play();
 		}
-	},750);
+	},1000);
 		console.log("esta es la matriz del juego "+GameComputer);
 		indice=0;
 		//console.log("esta la matriz del jugador despues del game"+GamePlayer);
@@ -347,15 +429,15 @@ function game (){
  * la variable pulsado que para cada boton tiene un valor diferente entre 0 y 3
  */
 
-document.getElementById('boton0').onclick=function(){
+document.getElementById('botonA0').onclick=function(){
 	pulsado=0;
 	i++
 	if (image==true){
-	var objBoton = document.getElementById('boton0').src="img/boton0.png";
+	var objBoton = document.getElementById('botonA0').src="img/botonA0On.png";
 	console.log('he pasado el encendido del boton0 por presion');
 	setTimeout(function(){
 			ligthsOff();
-		},500);
+		},750);
 	}
 	if (sound==true){
 	var objAudio = document.getElementById('audioBoton0');
@@ -373,14 +455,14 @@ document.getElementById('boton0').onclick=function(){
 
 
 	
-document.getElementById('boton1').onclick=function(){
+document.getElementById('botonA1').onclick=function(){
 	pulsado=1;
 	i++;
 	if (image==true){
-	var objBoton = document.getElementById('boton1').src="img/boton1.png";
+	var objBoton = document.getElementById('botonA1').src="img/botonA1On.png";
 	setTimeout(function(){
 			ligthsOff();
-		},500);
+		},750);
 	}
 	if (sound== true){
 	var objAudio = document.getElementById('audioBoton1');
@@ -393,15 +475,15 @@ document.getElementById('boton1').onclick=function(){
 
 }	
 	
-document.getElementById('boton2').onclick=function(){
+document.getElementById('botonA2').onclick=function(){
 	pulsado=2;
 	i++;
 	if (image==true){
-	var objBoton = document.getElementById('boton2').src="img/boton2.png";
+	var objBoton = document.getElementById('botonA2').src="img/botonA2On.png";
 	setTimeout(function(){
 			ligthsOff();
 			StarBtonOn=false;
-		},500);
+		},750);
 	}
 	if (sound== true){
 	var objAudio = document.getElementById('audioBoton2');
@@ -413,14 +495,14 @@ document.getElementById('boton2').onclick=function(){
 		}
 	}	
 
-document.getElementById('boton3').onclick=function(){
+document.getElementById('botonA3').onclick=function(){
 	pulsado=3;
 	i++;
 	if (image==true){
-	var objBoton = document.getElementById('boton3').src="img/boton3.png";
+	var objBoton = document.getElementById('botonA3').src="img/botonA3On.png";
 	setTimeout(function(){
 			ligthsOff();
-		},500);
+		},750);
 	}
 	if (sound== true){
 	var objAudio = document.getElementById('audioBoton3');
@@ -432,6 +514,80 @@ document.getElementById('boton3').onclick=function(){
 		}
 	}	
 
+document.getElementById('botonA4').onclick=function(){
+	pulsado=4;
+	i++;
+	if (image==true){
+	var objBoton = document.getElementById('botonA4').src="img/botonA4On.png";
+	setTimeout(function(){
+			ligthsOff();
+		},750);
+	}
+	if (sound== true){
+	var objAudio = document.getElementById('audioBoton4');
+	objAudio.play();
+	}
+	comprobacion();
+	if (i==GameComputer.length && error==0){
+        mostrar(GameComputer)		
+		}
+	}
+
+document.getElementById('botonA5').onclick=function(){
+	pulsado=5;
+	i++;
+	if (image==true){
+	var objBoton = document.getElementById('botonA5').src="img/botonA5On.png";
+	setTimeout(function(){
+			ligthsOff();
+		},750);
+	}
+	if (sound== true){
+	var objAudio = document.getElementById('audioBoton5');
+	objAudio.play();
+	}
+	comprobacion();
+	if (i==GameComputer.length && error==0){
+        mostrar(GameComputer)		
+		}
+	}
+
+document.getElementById('botonA6').onclick=function(){
+	pulsado=6;
+	i++;
+	if (image==true){
+	var objBoton = document.getElementById('botonA6').src="img/botonA6On.png";
+	setTimeout(function(){
+			ligthsOff();
+		},750);
+	}
+	if (sound== true){
+	var objAudio = document.getElementById('audioBoton6');
+	objAudio.play();
+	}
+	comprobacion();
+	if (i==GameComputer.length && error==0){
+        mostrar(GameComputer)		
+		}
+	}
+document.getElementById('botonA7').onclick=function(){
+	pulsado=7;
+	i++;
+	if (image==true){
+	var objBoton = document.getElementById('botonA7').src="img/botonA7On.png";
+	setTimeout(function(){
+			ligthsOff();
+		},750);
+	}
+	if (sound== true){
+	var objAudio = document.getElementById('audioBoton7');
+	objAudio.play();
+	}
+	comprobacion();
+	if (i==GameComputer.length && error==0){
+        mostrar(GameComputer)		
+		}
+	}
 
 
 
