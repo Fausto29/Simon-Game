@@ -289,10 +289,10 @@ console.log('entro en el bucle');
 	 * se crea una variable time a la cual se le da el valor de la longitud de la array y
 	 * multiplica por el tiempo que tarda en dar una vuelta la muestra
 	 */ 
-	var time=GameComputer.length*1250;
+	var timecontrol=GameComputer.length*1250;
 	setTimeout (function(){
 			game ();
-	},time);
+	},timecontrol);
 	i=0;
 	}
 
