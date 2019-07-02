@@ -221,6 +221,7 @@ function flashLigths (){
 function comprobacion (){
 	console.log("valor del indice:"+indice);
 			if (pulsado != GameComputer[indice]){
+				// este es el condicional para el cuando el modo strict esta desactivado
 				if (strictmode==false){
 					var z=0;
 					console.log('cuando strict mode off');
@@ -296,7 +297,36 @@ console.log('entro en el bucle');
 	i=0;
 	}
 
-
+/** Esta funcion genera un numero aleatorio entre 0 i 3
+ * cada numero esta asociado a un boton.
+ * gardamos la informacion en un array y reproducimos els sonido y encendemos 
+ * el boton asociado a ese numero 
+ * @return nada
+ */	
+function game (){		
+	azar=getRndInteger(0,gameMode);
+	GameComputer.push(azar);
+	console.log("en la funcion inicio azar es "+azar);
+	setTimeout(function(){
+		if (image==true){
+		var objBoton = document.getElementById('botonA'+azar).src="img/botonA"+azar+"On.png";
+		setTimeout(function(){
+			ligthsOff();
+		},750);
+		}
+		if (sound==true){
+		var objAudio = document.getElementById('audioBoton'+azar);
+		console.log("esta es la variable de audio "+ objAudio);
+		objAudio.play();
+		}
+	},1000);
+		console.log("esta es la matriz del juego "+GameComputer);
+		// aqui lanzamos la cuenta atras para el jugador.
+		controlTime=setInterval(countdown,1000);
+		indice=0;
+		
+		//console.log("esta la matriz del jugador despues del game"+GamePlayer);
+}
 
 var GameComputer=[];
 var azar;	
@@ -311,6 +341,10 @@ var gameMode;
 var time=10;
 var controlTime;
 
+
+/*esta es la configuracion de los botones de seleccion de juego
+ * segun que modo escojamos muestra o oculta botones
+ */
 document.getElementById('simonc').onclick=function(){
 	document.getElementById('simoncselect').src="img/botonselecionadoOn.png";
 	document.getElementById('simonsselect').src="img/botonselecionadoOff.png";
@@ -359,7 +393,9 @@ document.getElementById('simonm').onclick=function(){
 	
 }
 
-
+/* aqui se configurar los botones de diferentes modos
+ * de sonido, imagen o strict
+ */
 
 document.getElementById('image').onclick=function(){
 	if (image==true && sound!=false){
@@ -401,7 +437,7 @@ document.getElementById('strict').onclick=function(){
 
 
 document.getElementById('start').onclick=function(){
-	  
+	// el juego solo nos permitira comenzar si hemos escogido un modo de juego.  
 	if (gameMode>0){
 	  GameComputer=[];
 	  i=0;
@@ -426,35 +462,7 @@ document.getElementById('start').onclick=function(){
 	}
 	
 }	
-/** Esta funcion genera un numero aleatorio entre 0 i 3
- * cada numero esta asociado a un boton.
- * gardamos la informacion en un array y reproducimos els sonido y encendemos 
- * el boton asociado a ese numero 
- * @return nada
- */	
-function game (){		
-	azar=getRndInteger(0,gameMode);
-	GameComputer.push(azar);
-	console.log("en la funcion inicio azar es "+azar);
-	setTimeout(function(){
-		if (image==true){
-		var objBoton = document.getElementById('botonA'+azar).src="img/botonA"+azar+"On.png";
-		setTimeout(function(){
-			ligthsOff();
-		},750);
-		}
-		if (sound==true){
-		var objAudio = document.getElementById('audioBoton'+azar);
-		console.log("esta es la variable de audio "+ objAudio);
-		objAudio.play();
-		}
-	},1000);
-		console.log("esta es la matriz del juego "+GameComputer);
-		controlTime=setInterval(countdown,1000);
-		indice=0;
-		
-		//console.log("esta la matriz del jugador despues del game"+GamePlayer);
-}	
+	
 
 /* a partir de aqui entramos en la configuracion de los botones y todos tendran
  * la misma configuracion solo cambia la imagen i el sonido que se carga y el valor de 
@@ -462,6 +470,7 @@ function game (){
  */
 
 document.getElementById('botonA0').onclick=function(){
+	// variable que reinicia el tiempo del jugador
 	time=10;
 	pulsado=0;
 	i++
