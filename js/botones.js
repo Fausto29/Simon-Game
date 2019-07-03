@@ -466,7 +466,7 @@ document.getElementById('start').onclick=function(){
 
 /* a partir de aqui entramos en la configuracion de los botones y todos tendran
  * la misma configuracion solo cambia la imagen i el sonido que se carga y el valor de 
- * la variable pulsado que para cada boton tiene un valor diferente entre 0 y 3
+ * la variable pulsado que para cada boton tiene un valor diferente entre 0 y 7
  */
 
 document.getElementById('botonA0').onclick=function(){
